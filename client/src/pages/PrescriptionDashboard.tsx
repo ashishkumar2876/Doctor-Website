@@ -33,7 +33,7 @@ const PrescriptionDashboard: React.FC = () => {
   useEffect(() => {
     const fetchPrescriptions = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/prescriptions/patient", {
+        const res = await axios.get("https://doctor-website-jfrv.onrender.com/api/prescriptions/patient", {
           withCredentials: true,
         });
         setPrescriptions(res.data.prescriptions);

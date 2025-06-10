@@ -16,7 +16,7 @@ const PrescriptionPieChart: React.FC<Props> = ({ prescriptionId }) => {
     const fetchStats = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/reminders/status-summary/${prescriptionId}`,
+          `https://doctor-website-jfrv.onrender.com/api/reminders/status-summary/${prescriptionId}`,
           { withCredentials: true }
         );
         const stats = res.data;

@@ -15,7 +15,7 @@ const Register: React.FC = () => {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', form,{
+      await axios.post('https://doctor-website-jfrv.onrender.com/api/auth/register', form,{
         withCredentials:true
       });
       navigate('/');

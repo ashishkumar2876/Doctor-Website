@@ -17,7 +17,7 @@ const AllDoctors: React.FC = () => {
     const fetchDoctors = async () => {
       try {
         // Fetch list of doctors
-        const res = await axios.get("http://localhost:5000/api/auth/doctors", {
+        const res = await axios.get("https://doctor-website-jfrv.onrender.com/api/auth/doctors", {
           withCredentials: true,
         });
   
@@ -28,7 +28,7 @@ const AllDoctors: React.FC = () => {
 
         for (const doctor of res.data) {
           const statusRes = await axios.get(
-            `http://localhost:5000/api/doctor/request/status/${doctor._id}`,
+            `https://doctor-website-jfrv.onrender.com/api/doctor/request/status/${doctor._id}`,
             { withCredentials: true }
           );
   
@@ -48,7 +48,7 @@ const AllDoctors: React.FC = () => {
   const handleRequest = async (doctorId: string) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/doctor/request",
+        "https://doctor-website-jfrv.onrender.com/api/doctor/request",
         { doctorId },
         { withCredentials: true }
       );

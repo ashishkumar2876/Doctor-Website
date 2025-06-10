@@ -14,7 +14,7 @@ const MyPatients: React.FC = () => {
 
   const fetchPatients = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/doctor/approved-patients", {
+      const res = await axios.get("https://doctor-website-jfrv.onrender.com/api/doctor/approved-patients", {
         withCredentials: true,
       });
       setPatients(res.data);
@@ -31,7 +31,7 @@ const MyPatients: React.FC = () => {
 
   const handleRemove = async (patientId: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/doctor/remove-patient/${patientId}`, {
+      await axios.delete(`https://doctor-website-jfrv.onrender.com/api/doctor/remove-patient/${patientId}`, {
         withCredentials: true,
       });
       setPatients((prev) => prev.filter((p) => p._id !== patientId));

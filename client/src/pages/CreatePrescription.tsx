@@ -24,7 +24,7 @@ const CreatePrescription: React.FC = () => {
     const fetchApprovedPatients = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/doctor/approved-patients",
+          "https://doctor-website-jfrv.onrender.com/api/doctor/approved-patients",
           {
             withCredentials: true,
           }
@@ -92,7 +92,7 @@ const CreatePrescription: React.FC = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/prescriptions/patient/${selectedId}`,
+        `https://doctor-website-jfrv.onrender.com/api/prescriptions/patient/${selectedId}`,
         {
           withCredentials: true,
         }
@@ -130,7 +130,7 @@ const CreatePrescription: React.FC = () => {
     try {
       if (prescriptionId) {
         await axios.put(
-          `http://localhost:5000/api/prescriptions/${prescriptionId}`,
+          `https://doctor-website-jfrv.onrender.com/api/prescriptions/${prescriptionId}`,
           data,
           {
             withCredentials: true,
@@ -138,7 +138,7 @@ const CreatePrescription: React.FC = () => {
         );
         toast.success("Prescription updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/prescriptions", data, {
+        await axios.post("https://doctor-website-jfrv.onrender.com/api/prescriptions", data, {
           withCredentials: true,
         });
         toast.success("Prescription created successfully!");
@@ -168,7 +168,7 @@ const CreatePrescription: React.FC = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/prescriptions/${prescriptionId}`,
+        `https://doctor-website-jfrv.onrender.com/api/prescriptions/${prescriptionId}`,
         {
           withCredentials: true,
         }

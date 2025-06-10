@@ -26,7 +26,7 @@ const PatientRequests: React.FC = () => {
   useEffect(() => {
     const fetchPendingPatients = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/doctor/requests", {
+        const res = await axios.get("https://doctor-website-jfrv.onrender.com/api/doctor/requests", {
           withCredentials: true,
         });
         setPendingPatients(res.data);
@@ -44,7 +44,7 @@ const PatientRequests: React.FC = () => {
     setProcessingId(patientId);
     try {
       await axios.post(
-        `http://localhost:5000/api/doctor/${action}/${patientId}`,
+        `https://doctor-website-jfrv.onrender.com/api/doctor/${action}/${patientId}`,
         {},
         { withCredentials: true }
       );

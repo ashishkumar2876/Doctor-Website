@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Backend URL
-const API_URL = 'http://localhost:3000/api/auth'; // Adjust this if your backend URL differs
+const API_URL = 'https://doctor-website-jfrv.onrender.com/api/auth'; // Adjust this if your backend URL differs
 
 // Register user
 export const registerUser = async (name: string, email: string, password: string, role: string) => {
