@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020",                           /* Set the JavaScript language version */
+    "module": "CommonJS",                         /* Specify module code generation */
+    "rootDir": "./src",                           /* Specify the root folder of your source files */
+    "outDir": "./dist",                           /* Redirect output structure to the directory */
+    "strict": true,                               /* Enable all strict type-checking options */
+
+    /* Module Resolution */
+    "moduleResolution": "node",                   /* Use Node.js module resolution */
+    "esModuleInterop": true,                      /* Emit __importStar and __importDefault helpers */
+    "forceConsistentCasingInFileNames": true,     /* Disallow inconsistently-cased imports */
+    "resolveJsonModule": true,                    /* Enable importing JSON modules */
+    "isolatedModules": true,                      /* Ensure each file can be safely transpiled independently */
+
+    /* Source Maps */
+    "sourceMap": true,                            /* Create source map files for debugging */
+
+    /* Other */
+    "noImplicitAny": true,                        /* Raise error on expressions and declarations with an implied 'any' type */
+    "skipLibCheck": true                          /* Skip type checking of declaration files */
+  },
+  "include": [
+    "src",
+    "src/types", /* Include the types directory */
+    "src/global.d.ts" /* Include the global.d.ts file */
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
