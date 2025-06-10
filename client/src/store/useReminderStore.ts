@@ -19,13 +19,13 @@ interface Store {
 export const useReminderStore = create<Store>((set) => ({
   reminders: [],
   fetchReminders: async (prescriptionId, date) => {
-    const res = await axios.get(`http://localhost:5000/api/reminders/${prescriptionId}?date=${date}`,{
+    const res = await axios.get(`https://doctor-website-jfrv.onrender.com/api/reminders/${prescriptionId}?date=${date}`,{
       withCredentials:true
     });
     set({ reminders: res.data });
   },
   markAsTaken: async (reminderId) => {
-    await axios.patch(`http://localhost:5000/api/reminders/mark-taken/${reminderId}`,{},{
+    await axios.patch(`https://doctor-website-jfrv.onrender.com/api/reminders/mark-taken/${reminderId}`,{},{
       withCredentials:true
     });
     set((state) => ({
