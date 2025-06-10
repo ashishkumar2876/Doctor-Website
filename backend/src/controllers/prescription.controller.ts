@@ -48,7 +48,7 @@ export const createPrescription = async (req: Request, res: Response): Promise<v
 
     res.status(201).json({ message: "Prescription created", prescription: newPrescription });
   } catch (error) {
-    console.error("Error creating prescription:", error);
+    
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -65,7 +65,7 @@ export const getPrescriptionsByDoctor = async (req: Request, res: Response): Pro
 
     res.status(200).json(prescriptions);
   } catch (error) {
-    console.error("Error fetching prescriptions:", error);
+    
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -89,7 +89,7 @@ export const getPrescriptionsByPatient = async (req: Request, res: Response): Pr
 
     res.status(200).json({ prescriptions });
   } catch (error) {
-    console.error("Error fetching prescriptions:", error);
+  
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -112,7 +112,7 @@ export const getPrescriptionByPatientId = async (req: Request, res: Response): P
 
     res.status(200).json({prescription}); // 👉 also 'return' here for good practice
   } catch (error) {
-    console.error('Error fetching prescription by patient ID:', error);
+    
     res.status(500).json({ message: 'Internal server error' }); // 👉 even here
   }
 };
@@ -173,7 +173,7 @@ export const updatePrescription = async (req: Request, res: Response): Promise<v
       prescription,
     });
   } catch (error) {
-    console.error("Error updating prescription:", error);
+
     res.status(500).json({ message: 'Server error', error });
   }
 };
@@ -194,7 +194,7 @@ export const deletePrescription = async (req: Request, res: Response): Promise<v
 
     res.status(200).json({ message: 'Prescription and related reminders deleted successfully' });
   } catch (error) {
-    console.error("Error deleting prescription:", error);
+    
     res.status(500).json({ message: 'Server error', error });
   }
 };

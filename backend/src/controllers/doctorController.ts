@@ -86,7 +86,7 @@ export const approvePatientRequest = async (req: Request, res: Response): Promis
 
     res.status(200).json({ message: 'Patient approved successfully' });
   } catch (error) {
-    console.error(error);
+
     res.status(500).json({ message: 'Server error', error });
   }
 };

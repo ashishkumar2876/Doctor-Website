@@ -12,7 +12,7 @@ const CalendarView: React.FC = () => {
 
   useEffect(() => {
     if (prescriptionId && selectedDate) {
-        console.log(prescriptionId,selectedDate);
+  
       fetchReminders(prescriptionId, selectedDate);
     }
   }, [prescriptionId, selectedDate]);

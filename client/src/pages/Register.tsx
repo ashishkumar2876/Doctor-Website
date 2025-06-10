@@ -20,7 +20,7 @@ const Register: React.FC = () => {
       });
       navigate('/');
     } catch (error: any) {
-      console.error(error.response?.data?.message || 'Registration failed');
+  
     }
   };
 

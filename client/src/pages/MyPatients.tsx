@@ -19,7 +19,7 @@ const MyPatients: React.FC = () => {
       });
       setPatients(res.data);
     } catch (error) {
-      console.error("Error fetching approved patients:", error);
+    
     } finally {
       setLoading(false);
     }
@@ -36,7 +36,7 @@ const MyPatients: React.FC = () => {
       });
       setPatients((prev) => prev.filter((p) => p._id !== patientId));
     } catch (error) {
-      console.error("Error removing patient:", error);
+      
     }
   };
 

@@ -38,7 +38,7 @@ const PrescriptionDashboard: React.FC = () => {
         });
         setPrescriptions(res.data.prescriptions);
       } catch (error) {
-        console.error("Error fetching prescriptions:", error);
+        
       } finally {
         setLoading(false);
       }

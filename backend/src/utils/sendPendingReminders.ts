@@ -34,7 +34,7 @@ export const sendPendingReminders = async () => {
 
       // If no email found, skip
       if (!patient || !patient.email) {
-        console.error('No email found for patient:', reminder.patientId);
+        
         continue;
       }
 
@@ -44,7 +44,7 @@ export const sendPendingReminders = async () => {
       // Only send the reminder if the time difference exceeds 30 minutes
       if (timeDifference >= 2) {
         const reminderDateInIST = reminderTime.format('YYYY-MM-DD HH:mm');
-        console.log('Reminder date (IST):', reminderDateInIST);
+      
 
         const toEmail = patient.email;
         const subject = `Medicine Reminder: ${reminder.medicineName}`;
@@ -64,15 +64,15 @@ export const sendPendingReminders = async () => {
           reminder.emailSent = true;
           await reminder.save();
 
-          console.log(`Reminder sent successfully to ${toEmail}`);
+        
         } catch (emailError) {
-          console.error('Error sending email to', toEmail, ':', emailError);
+      
         }
       } else {
       }
     }
   } catch (error) {
-    console.error('Error processing pending reminders:', error);
+  
   }
 };
 export const autoMarkMissedReminders = async () => {

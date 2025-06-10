@@ -20,7 +20,7 @@ const AllDoctors: React.FC = () => {
         const res = await axios.get("http://localhost:5000/api/auth/doctors", {
           withCredentials: true,
         });
-        console.log(res);
+  
         setDoctors(res.data);
 
         // Check request status for each doctor
@@ -31,13 +31,13 @@ const AllDoctors: React.FC = () => {
             `http://localhost:5000/api/doctor/request/status/${doctor._id}`,
             { withCredentials: true }
           );
-          console.log(statusRes.data.status);
+  
           statuses[doctor._id] = statusRes.data.status;
         }
 
         setRequestStatuses(statuses); // Set statuses for each doctor
       } catch (error) {
-        console.error("Error fetching doctors:", error);
+    
       } finally {
         setLoading(false);
       }
@@ -54,7 +54,7 @@ const AllDoctors: React.FC = () => {
       );
       setRequestStatuses((prev) => ({ ...prev, [doctorId]: "pending" })); // Update status to pending after request
     } catch (error) {
-      console.error("Failed to send request:", error);
+      
     }
   };
 

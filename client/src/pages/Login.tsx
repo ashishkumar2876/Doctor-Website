@@ -19,13 +19,13 @@ const Login: React.FC = () => {
       );
 
       const { token, user } = res.data;
-      console.log(token);
+  
       setAuth(token, user);
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       // Don't navigate here yet — wait for effect below
     } catch (error: any) {
-      console.error(error.response?.data?.message || 'Login failed');
+    
     }
   };
 

@@ -56,7 +56,7 @@ const DoctorDashboard: React.FC = () => {
         });
         setPrescriptions(res.data);
       } catch (err) {
-        console.error("Error fetching prescriptions:", err);
+      
       } finally {
         setLoading(false);
       }

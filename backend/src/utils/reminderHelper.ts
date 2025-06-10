@@ -70,12 +70,12 @@ const generateReminders = async (
   if (remindersToSave.length > 0) {
     try {
       await Reminder.insertMany(remindersToSave);
-      console.log(`${remindersToSave.length} reminders saved successfully.`);
+  
     } catch (error) {
-      console.error("Error saving reminders:", error);
+    
     }
   } else {
-    console.log("No reminders to save.");
+    
   }
 };
 

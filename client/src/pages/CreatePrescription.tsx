@@ -31,7 +31,7 @@ const CreatePrescription: React.FC = () => {
         );
         setApprovedPatients(res.data);
       } catch (error) {
-        console.error("Failed to fetch approved patients", error);
+        
       }
     };
 
@@ -118,7 +118,7 @@ const CreatePrescription: React.FC = () => {
         setPrescriptionId(null);
       }
     } catch (err) {
-      console.error("Error fetching existing prescription:", err);
+      
       setPrescriptionId(null);
     }
   };
@@ -156,7 +156,6 @@ const CreatePrescription: React.FC = () => {
         ]);
       }
     } catch (error) {
-      console.error("Error saving prescription:", error);
       toast.error("An error occurred while saving the prescription.");
     }
   };
@@ -188,7 +187,7 @@ const CreatePrescription: React.FC = () => {
         },
       ]);
     } catch (error) {
-      console.error("Error deleting prescription:", error);
+    
       toast.error("Failed to delete prescription.");
     }
   };

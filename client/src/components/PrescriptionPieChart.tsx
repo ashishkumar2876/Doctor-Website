@@ -29,7 +29,7 @@ const PrescriptionPieChart: React.FC<Props> = ({ prescriptionId }) => {
 
         setData(formattedData);
       } catch (error) {
-        console.error("Error fetching stats:", error);
+        
       } finally {
         setLoading(false);
       }
@@ -59,7 +59,7 @@ const PrescriptionPieChart: React.FC<Props> = ({ prescriptionId }) => {
             labelLine={false}
             isAnimationActive={true}
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

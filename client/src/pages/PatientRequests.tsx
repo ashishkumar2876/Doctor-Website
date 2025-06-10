@@ -31,7 +31,7 @@ const PatientRequests: React.FC = () => {
         });
         setPendingPatients(res.data);
       } catch (err) {
-        console.error("Failed to fetch pending patients", err);
+      
       } finally {
         setLoading(false);
       }
@@ -50,7 +50,7 @@ const PatientRequests: React.FC = () => {
       );
       setPendingPatients((prev) => prev.filter((p) => p._id !== patientId));
     } catch (err) {
-      console.error(`${action} failed`, err);
+  
     } finally {
       setProcessingId(null);
     }

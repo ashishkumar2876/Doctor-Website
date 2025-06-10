@@ -3,7 +3,7 @@ import { autoMarkMissedReminders, sendPendingReminders } from '../utils/sendPend
 
 // This will run the task every 5 minutes
 cron.schedule('* * * * *', async () => {
-  console.log('⏰ Running reminder email job...');
+
   await sendPendingReminders();
   await autoMarkMissedReminders();
 });
